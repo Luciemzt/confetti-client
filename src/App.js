@@ -3,10 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import PrivateRoute from './components/Routes/PrivateRoute'
 import Navigation from './components/Common/Navigation'
+import Home from "./views/Home/Home";
 import Signup from './views/SignUp/SignUp';
 import Login from "./views/Login/Login";
-import Home from "./views/Home/Home";
-import Places from "./views/components/Places/Places";
+import Places from "./views/Places/Places";
 
 
 

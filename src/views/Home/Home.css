@@ -1,0 +1,21 @@
+.titre{
+    font-family: 'Ranchers', cursive;
+    color: #C34271; 
+    padding: 100px 40px 40px 40px;
+}
+
+
+.paragraphe{
+    font-family: 'Roboto', cursive;
+    padding: 10px 40px 40px 40px; 
+}
+body{
+    background-color: #16FFBD;
+    text-align: center;
+}
+
+button{
+    background-color: #F070A1;
+    font-family: 'Ranchers', cursive;
+    padding: 10px;
+}

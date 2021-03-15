@@ -1,5 +1,6 @@
 import React from 'react'; 
 import {Link} from 'react-router-dom';
+import {Button} from 'react-native';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 
@@ -15,7 +16,9 @@ function Navigation (){
                         <Link to = "/"> Home </Link>
                         <Link to = "/place"> Place </Link>   
                         <Link to = "/booking"> Booking </Link> 
-                        <Link to = "/signup"> <button type="submit">Sign Up </button></Link>
+                        <Link to = "/signup"> <Button type="submit">Sign Up </Button></Link>
+                        <Link to = "/login"> <Button type="submit"> Login </Button></Link>
+                        <Link to = "/logout"> <Button type="submit">Log Out </Button></Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

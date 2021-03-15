@@ -1,4 +1,5 @@
 import React from 'react';
+import './Login.css'
 import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
 
@@ -17,7 +18,7 @@ function Login () {
         push('/place')
     }
     return (
-        <div>
+        <div className='form-login'>
             <form onSubmit={handlesubmit}>
                 <label>E-mail</label>
                 <input
@@ -37,7 +38,6 @@ function Login () {
                 />
             <button type="submit">Login</button>
             </form>
-
         </div>
     )
 }

@@ -10,7 +10,7 @@ const {places, getAllPlaces} = usePlaces()
 
   React.useEffect(()=>{
     getAllPlaces()
-  }, []);
+  });
 
     return (
       <div>

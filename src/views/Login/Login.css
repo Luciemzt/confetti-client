@@ -1,0 +1,17 @@
+body{
+    background-color: #16FFBD;
+    text-align: center;
+    font-family: 'Roboto', cursive;
+}
+
+button{
+    background-color: #F070A1;
+    font-family: 'Ranchers', cursive;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

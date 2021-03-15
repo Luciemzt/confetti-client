@@ -14,7 +14,7 @@ function Login () {
         event.preventDefault()
         await handleLogin(state)
         localStorage.setItem('islogged', 'true')
-        push('/places')
+        push('/place')
     }
     return (
         <div>

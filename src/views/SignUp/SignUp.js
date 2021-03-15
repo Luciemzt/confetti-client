@@ -15,7 +15,7 @@ function Signup () {
         event.preventDefault()
         await handleSignup(state)
         localStorage.setItem('islogged', 'true')
-        push('/places')
+        push('/place')
     }
     return (
         <div className="loginBox">

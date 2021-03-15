@@ -13,7 +13,7 @@ function Navigation (){
                         <Nav pullRight>
                         <Link to="/"> Confetti <i class="fas fa-glass-cheers"></i></Link> 
                         <Link to = "/"> Home </Link>
-                        <Link to = "/places"> Places </Link>   
+                        <Link to = "/place"> Place </Link>   
                         <Link to = "/booking"> Booking </Link> 
                         <Link to = "/signup"> <button type="submit">Sign Up </button></Link>
                         </Nav>

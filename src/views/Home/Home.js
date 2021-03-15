@@ -1,10 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+
 
 
 function Home () {
     return (
-        <h1>Hello</h1>
+        <div>
+        <h1>Let's throw confetti to your life !</h1>
+        <a href="/login">Login here</a>
+        <a href="/signup">Sign-up here</a>
+        </div>
     )
 };
 

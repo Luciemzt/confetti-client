@@ -12,14 +12,15 @@ export const PlaceContext = React.createContext({});
 function PlaceProvider({ children }) {
   const [places, setPlaces] = React.useState([]);
 
-  const getAllPlaces = (async () => {
+  const getAllPlaces = async () => {
       const { data } = await getAllPlacesService();
       setPlaces(data);
-  }, []);
-  const getPlace = (async () => {
+      console.log('data', data)
+  };
+  const getPlace = async () => {
     const { place} = await getPlaceService();
     setPlaces(place);
-}, []);
+};
 
   return (
     <PlaceContext.Provider

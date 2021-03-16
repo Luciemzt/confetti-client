@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
-
+import './Signup.css'
 
 function Signup () {
     const [state, setState] = React.useState({email: "", password: ""})

@@ -18,7 +18,7 @@ function Login () {
         push('/place')
     }
     return (
-        <div className='form-login'>
+        <div style={{display: 'flex', marginTop: '10px'}}>
             <form onSubmit={handlesubmit}>
                 <label>E-mail</label>
                 <input

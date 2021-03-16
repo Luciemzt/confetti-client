@@ -5,12 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import AuthProvider from "./context/AuthContext";
+import PlaceProvider from "./context/PlaceContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
+        <PlaceProvider>
         <App />
+        </PlaceProvider>
       </AuthProvider>
     </Router>
   </React.StrictMode>,

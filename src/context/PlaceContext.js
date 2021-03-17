@@ -1,29 +1,28 @@
-import React from 'react';
-import { 
-    getAllPlaces as getAllPlacesService, 
-     getPlace as getPlaceService, 
-    } from "../service/place.service";
-
-
+import React from "react";
+import {
+  getAllPlaces as getAllPlacesService,
+  getPlace as getPlaceService,
+} from "../service/place.service";
 
 export const PlaceContext = React.createContext({});
 
-
 function PlaceProvider({ children }) {
   const [places, setPlaces] = React.useState([]);
+  const [place, setPlace] = React.useState({});
 
-  const getAllPlaces = (async () => {
-      const { data } = await getAllPlacesService();
-      setPlaces(data);
-  }, []);
-  const getPlace = (async () => {
-    const { place} = await getPlaceService();
-    setPlaces(place);
-}, []);
+  const getAllPlaces = React.useCallback(async () => {
+    const { data } = await getAllPlacesService();
+    setPlaces(data);
+  }, [setPlaces, getAllPlacesService]);
+
+  const getPlace = React.useCallback(async () => {
+    const { place } = await getPlaceService();
+    setPlace(place);
+  }, [setPlace, getPlaceService]);
 
   return (
     <PlaceContext.Provider
-      value={{ places, setPlaces, getAllPlaces, getPlace}}
+      value={{ places, setPlaces, getAllPlaces, getPlace, place, setPlace }}
     >
       {children}
     </PlaceContext.Provider>
@@ -31,8 +30,7 @@ function PlaceProvider({ children }) {
 }
 
 export function usePlaces() {
-    return React.useContext(PlaceContext);
-  }
+  return React.useContext(PlaceContext);
+}
 
-
-export default PlaceContext;
+export default PlaceProvider;

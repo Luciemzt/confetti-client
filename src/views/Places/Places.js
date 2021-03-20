@@ -17,7 +17,7 @@ function Places() {
         <div key={place._id}>
           <h5>{place.name}</h5>
           <p>{place.type}</p>
-          <img src="{place.imageURL}" alt="barimage"></img>
+          <img src={place.imageURL} alt="barimage"></img>
           <Link to={`/place/${place._id}`}>View More</Link>
         </div>
       ))}

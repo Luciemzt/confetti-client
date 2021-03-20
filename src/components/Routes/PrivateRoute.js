@@ -1,11 +1,14 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { useHistory, Route, Redirect } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.utils";
 
 function PrivateRoute({ path, exact, children }) {
   const { user } = useAuth();
+  console.log("privateuser",user)
+  const {push}= useHistory()
+  
   if (!user.isLogged) {
-    return <Redirect to="/login" />;
+    push("/login")
   }
 
   return (

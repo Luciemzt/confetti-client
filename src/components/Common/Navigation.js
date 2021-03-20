@@ -14,8 +14,8 @@ function Navigation (){
                         <Nav pullRight>
                         <Link to="/"> Confetti <i class="fas fa-glass-cheers"></i></Link> 
                         <Link to = "/"> Home </Link>
-                        <Link to = "/place"> Place </Link>   
-                        <Link to = "/booking"> Booking </Link> 
+                        <Link to = "/place"> Place </Link>
+                        <Link to = "/booking"> My Booking </Link> 
                         <Link to = "/signup"> <button type="submit">Sign Up </button></Link>
                         <Link to = "/login"> <button type="submit"> Login </button></Link>
                         <Link to = "/logout"> <button type="submit">Log Out </button></Link>

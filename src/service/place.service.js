@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const placeApi = axios.create({
-  baseURL: `${process.env.REACT_APP_API},
+  baseURL: `${process.env.REACT_APP_API}`,
   withCredentials: true,
 });
 

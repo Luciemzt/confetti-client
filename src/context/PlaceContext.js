@@ -10,27 +10,15 @@ function PlaceProvider({ children }) {
   const [places, setPlaces] = React.useState([]);
   const [place, setPlace] = React.useState({});
 
-<<<<<<< HEAD
-  const getAllPlaces = async () => {
-      const { data } = await getAllPlacesService();
-      setPlaces(data);
-      console.log('data', data)
-  };
-  const getPlace = async () => {
-    const { place} = await getPlaceService();
-    setPlaces(place);
-};
-=======
   const getAllPlaces = React.useCallback(async () => {
     const { data } = await getAllPlacesService();
     setPlaces(data);
   }, [setPlaces, getAllPlacesService]);
 
   const getPlace = React.useCallback(async () => {
-    const { place } = await getPlaceService();
-    setPlace(place);
+    const { data } = await getPlaceService();
+    setPlace(data);
   }, [setPlace, getPlaceService]);
->>>>>>> 2295b80fc99d955f95d43fba270d943d04b2cdf4
 
   return (
     <PlaceContext.Provider

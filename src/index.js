@@ -12,11 +12,7 @@ ReactDOM.render(
     <Router>
       <AuthProvider>
         <PlaceProvider>
-<<<<<<< HEAD
-        <App />
-=======
           <App />
->>>>>>> 2295b80fc99d955f95d43fba270d943d04b2cdf4
         </PlaceProvider>
       </AuthProvider>
     </Router>

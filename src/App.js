@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import PrivateRoute from './components/Routes/PrivateRoute'
+import PrivateRoute from './components/Routes/PrivateRoute'
+import AnonRoute from './components/Routes/AnonRoute'
 import Navigation from './components/Common/Navigation'
 import Home from "./views/Home/Home";
 import Signup from "./views/SignUp/SignUp";
@@ -10,36 +11,23 @@ import Logout from "./views/Logout/Logout";
 import Place from "./views/Place/Place";
 import Places from "./views/Places/Places";
 
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-    <Router>
-    <Navigation />
+function App(){
+  return (
+    <div>
+      <Navigation />
+      <Logout />
+      <Router>
         <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/signup" exact component={Signup}/>
-        <Route path="/login" exact component={Login}/>
-        <Route path="/logout" exact component={Logout}/>
-        <Route path="/place" exact component={Places}/>
-        <Route path="/place/:{place._id}" exact component={Place}/>
+          <Route  path="/" exact component={Home} />
+          <Route  path="/place/:placeId" exact component={Place} />
+          <Route  path="/place" exact component={Places} />
+          <Route path="/signup" exact component={Signup} />
+          <Route  path="/login" exact component={Login} />
         </Switch>
-    </Router>
-  </div>
-        <Logout />
-        <Router>
-          <Switch>
-            <Route path="/place/:placeId" exact component={Place} />
-            <Route path="/place" exact component={Places} />
-            <Route path="/signup" exact component={Signup} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/" exact component={Home} />
-          </Switch>
-        </Router>
-      </div>
-    );
-  }
+      </Router>
+    </div>
+  );
 }
+
 
 export default App;

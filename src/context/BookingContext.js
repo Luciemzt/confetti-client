@@ -2,7 +2,7 @@
 import React from "react";
 import {
     getBookings as getBookingsService,
-    getBooking as getBookingService,
+    //getBooking as getBookingService,
     editBooking as editBookingService,
     createBooking as createBookingService,
     deleteBooking as deleteBookingService,
@@ -12,17 +12,21 @@ export const bookingContext = React.createContext({});
 
 function bookingProvider({ children }) {
   const [bookings, setBookings] = React.useState([]);
-  const getBookings = async () => {
-    const { data } = await getBookingService();
+
+
+  const getBookings = React.useCallback(async () => {
+    const { data } = await getBookingsService();
     setBookings(data);
+  }, [setBookings, getBookingsService]);
   };
-  const createBooking = async (todo) => {
+
+  const createBooking = async (booking) => {
     const { data: newBooking } = await createBookingService(booking);
     setbookings((state) => state.concat(newBooking));
   };
 
   return (
-    <TodoContext.Provider value={{ getTodos, todos, createTodo }}>
+    <TodoContext.Provider value={{ getBookings, editBooking, deleteBooking }}>
       {children}
     </TodoContext.Provider>
   );

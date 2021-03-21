@@ -17,7 +17,7 @@ function Place() {
         <p>{place.description}</p>
         <p>{place.adress}</p>
         <p>{place.type}</p>
-        <img src={place.imageURL} alt="barimage"></img>
+        <img src={place.imageURL} style={{width: 150, height: 150,}} alt="barimage"/>
         <Link to={`/booking`}> Book it now </Link>
       </div>
     );

@@ -18,7 +18,7 @@ function Login () {
         push('/place')
     }
     return (
-        <div style={{display: 'flex', marginTop: '10px'}}>
+        <div className="loginBox">
             <form onSubmit={handlesubmit}>
                 <label>E-mail</label>
                 <input
@@ -37,6 +37,10 @@ function Login () {
                     onChange={handleChange}
                 />
             <button type="submit">Login</button>
+            <p>
+            Not yes an user ? <br />
+            <a href="/signup">Signup here</a>
+            </p>
             </form>
         </div>
     )

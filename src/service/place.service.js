@@ -7,6 +7,6 @@ const placeApi = axios.create({
 
 export const getAllPlaces = () => placeApi.get(`/place`);
 
-export const getPlace = (placeId) => placeApi.post(`/place/${placeId}`);
+export const getPlace = (placeId) => placeApi.get(`/place/${placeId}`);
 
 //const QueryPlaceService = (query) => placeApi.get(`/search?q=${query}`);

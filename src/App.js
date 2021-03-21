@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import PrivateRoute from './components/Routes/PrivateRoute'
 import AnonRoute from './components/Routes/AnonRoute'
 import Navigation from './components/Common/Navigation'
@@ -11,25 +11,35 @@ import Login from "./views/Login/Login";
 import Logout from "./views/Logout/Logout";
 import Place from "./views/Place/Place";
 import Places from "./views/Places/Places";
+import { useAuth } from "./context/AuthContext.utils";
 
 function App(){
+  const { user } = useAuth();
   return (
     <div>
       <Navigation />
-      <Logout />
-      <Router>
-        <Switch>
-          <AnonRoute exact path="/" exact component={Home} />
-          <PrivateRoute exact path="/place/:placeId" exact component={Place} />
-          <PrivateRoute exact path="/place" exact component={Places} />
-          <PrivateRoute exact path="/profile" exact component={ProfilePage} />
-          <AnonRoute exact path="/signup" exact component={Signup} />
-          <AnonRoute exact path="/login" exact component={Login} />
-        </Switch>
-      </Router>
+      {user.id && <Logout />}
+      <Switch>
+        <PrivateRoute exact path="/place/:placeId" exact> 
+          <Place />
+        </PrivateRoute>
+        <PrivateRoute exact path="/place" exact>
+          <Places />
+        </PrivateRoute>
+        <PrivateRoute exact path="/profile" exact>
+          <ProfilePage />
+        </PrivateRoute>
+        <AnonRoute exact path="/signup" exact>
+          <Signup />
+        </AnonRoute>
+        <AnonRoute exact path="/login" exact>
+          <Login />
+        </AnonRoute>
+        <AnonRoute exact path="/" exact component={Home}>
+          <Home />
+        </AnonRoute>
+      </Switch>
     </div>
   );
 }
-
-
 export default App;

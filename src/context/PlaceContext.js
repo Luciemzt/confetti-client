@@ -15,8 +15,8 @@ function PlaceProvider({ children }) {
     setPlaces(data);
   }, [setPlaces, getAllPlacesService]);
 
-  const getPlace = React.useCallback(async () => {
-    const { data } = await getPlaceService();
+  const getPlace = React.useCallback(async (placeId) => {
+    const { data } = await getPlaceService(placeId);
     setPlace(data);
   }, [setPlace, getPlaceService]);
 

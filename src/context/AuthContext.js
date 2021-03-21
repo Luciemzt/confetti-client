@@ -41,6 +41,7 @@ function AuthProvider({ children }) {
       await logout();
       removeUser();
       setState({ user: defaultUser() });
+      console.log("adiosssss")
     } catch (e) {
       console.error(e);
     }

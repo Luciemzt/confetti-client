@@ -2,11 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 //import {Button} from 'react-native';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-
+import Logout from "../../views/Logout/Logout";
+import { useAuth } from "../../context/AuthContext.utils";
 
 function Navigation (){
-       return (
+    const { user } = useAuth();
+    return (
         <div>
+
             <Navbar collapseOnSelect fixed='top' expand='sm' bg='light' variant='light'>
                 <Container>
                     <Navbar.Toggle aria-controls= 'responsive-navbar-nav'/>
@@ -14,11 +17,9 @@ function Navigation (){
                         <Nav pullRight>
                         <Link to="/"> Confetti <i class="fas fa-glass-cheers"></i></Link> 
                         <Link to = "/"> Home </Link>
-                        <Link to = "/place"> Place </Link>
-                        <Link to = "/booking"> My Booking </Link> 
-                        <Link to = "/signup"> <button type="submit">Sign Up </button></Link>
-                        <Link to = "/login"> <button type="submit"> Login </button></Link>
-                        <Link to = "/logout"> <button type="submit">Log Out </button></Link>
+                        <Link to = "/place"> Places </Link>
+                        <Link to = "/booking"> Booking </Link>   
+                        {user.id && <Logout />}           
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

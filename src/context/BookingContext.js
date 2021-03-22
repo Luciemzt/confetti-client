@@ -6,7 +6,7 @@ import {
     editBooking as editBookingService,
     createBooking as createBookingService,
     deleteBooking as deleteBookingService,
-} from "../services/booking.service";
+} from "../service/booking.service";
 
 export const bookingContext = React.createContext({});
 
@@ -18,7 +18,7 @@ function bookingProvider({ children }) {
     const { data } = await getBookingsService();
     setBookings(data);
   }, [setBookings, getBookingsService]);
-  };
+
 
   const createBooking = async (booking) => {
     const { data: newBooking } = await createBookingService(booking);
@@ -26,7 +26,7 @@ function bookingProvider({ children }) {
   };
 
   return (
-    <TodoContext.Provider value={{ getBookings, editBooking, deleteBooking }}>
+    <TodoContext.Provider value={{ getBookings, createBooking, deleteBooking }}>
       {children}
     </TodoContext.Provider>
   );

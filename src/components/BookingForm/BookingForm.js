@@ -1,11 +1,12 @@
 import React from 'react';
 
-const initialState = {,
+const initialState = {
     quantity: 0,
-    options: {beverages: '', foods:'', customOptions:''},
+    name: '',
+    date: ''
 };
 
-function BookingForm({ onSubmit }) {
+function BookingForm ({ onSubmit }) {
     const [state, setState] = React.useState(initialState);
 
     const handleSumbit = (event) => {
@@ -13,19 +14,49 @@ function BookingForm({ onSubmit }) {
         onSubmit(state)
         setState(initialState)
     }
-    const handleChange = ({ target }) =>
-        setState({ ...state, [target.beverage]: target.value });
-
+    const handleChange = ({ target }) =>{
+        setState({ ...state, [target.name]: target.value });
+    }
     return (
-        <div>
-        <label for="options">Choose an option :</label>
-        <select name="option">
-        <option value="beverages">Beverages</option>
-        <option value="food">Food</option>
-        <option value="Animation">Animation</option>
-        <option value="music">Music</option>
-        </select>
-        </div>
+
+    <form className="form" onSubmit={handleSumbit}>
+        <label className="label" htmlFor="name">
+            Option:
+        </label>
+        <input
+            className="input"
+            type="text"
+            name="name"
+            value={state.name}
+            onChange={handleChange}
+        />
+        <label className="label" htmlFor="quantity">
+            Quantity:
+        </label>
+        <input
+            className="input"
+            type="number"
+            name="quantity"
+            value={state.quantity}
+            onChange={handleChange}
+        />
+        <label className="label" htmlFor="start">
+            Start date:
+        </label>
+        <input
+            className="input"
+            type="date"
+            name="date"
+            value={(state.date).format("yyyy-mm-dd")}
+            onChange={handleChange}
+        />
+        <button className="button" type="submit">Add option  </button>
+    </form>
+
+);
+}
+
+export default BookingForm; 
 
         
 /*         <form className="form" onSubmit={handleSumbit}>
@@ -55,7 +86,3 @@ function BookingForm({ onSubmit }) {
 
             <button className="button" type="submit">Add Option </button>
         </form>  */       
-    );
-}
-
-export default BookingForm;

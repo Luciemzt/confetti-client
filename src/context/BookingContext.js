@@ -3,14 +3,14 @@ import React from "react";
 import {
     getBookings as getBookingsService,
     //getBooking as getBookingService,
-    editBooking as editBookingService,
+    //editBooking as editBookingService,
     createBooking as createBookingService,
-    deleteBooking as deleteBookingService,
+    //deleteBooking as deleteBookingService,
 } from "../service/booking.service";
 
-export const bookingContext = React.createContext({});
+export const BookingContext = React.createContext({});
 
-function bookingProvider({ children }) {
+function BookingProvider({ children }) {
   const [bookings, setBookings] = React.useState([]);
 
 
@@ -22,13 +22,13 @@ function bookingProvider({ children }) {
 
   const createBooking = async (booking) => {
     const { data: newBooking } = await createBookingService(booking);
-    setbookings((state) => state.concat(newBooking));
+    setBookings((state) => state.concat(newBooking));
   };
 
   return (
-    <TodoContext.Provider value={{ getBookings, createBooking, deleteBooking }}>
+    <BookingContext.Provider value={{ getBookings, createBooking }}>
       {children}
-    </TodoContext.Provider>
+    </BookingContext.Provider>
   );
 }
 
@@ -36,4 +36,4 @@ export function useBooking() {
   return React.useContext(BookingContext);
 }
 
-export default bookingProvider;
+export default BookingProvider;

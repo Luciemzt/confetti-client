@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 
 function BookingBox({ option, quantity, onClick }) {
     const [currentQuantity, setCurrentQuantity] = React.useState(quantity);
@@ -28,3 +28,4 @@ function BookingBox({ option, quantity, onClick }) {
 }
 
 export default BookingBox;
+ */

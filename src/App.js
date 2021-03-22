@@ -29,9 +29,12 @@ function App(){
         <PrivateRoute exact path="/place" exact>
           <Places />
         </PrivateRoute>
-        <PrivateRoute exact path="/booking" exact>
+        <PrivateRoute exact path="/booking/:placeId" exact>
           <BookingPage />
         </PrivateRoute>
+        {/* <PrivateRoute exact path="/mybookings" exact>
+          <MyBookings />
+        </PrivateRoute> */}
         <AnonRoute exact path="/signup" exact>
           <Signup />
         </AnonRoute>

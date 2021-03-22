@@ -25,21 +25,33 @@ function BookingForm ({ onSubmit }) {
         </label>
         <input
             className="input"
-            type="text"
-            name="name"
-            value={state.name}
+            type="checkbox"
+            name="beverage"
+            value={state.options.[]}
             onChange={handleChange}
         />
-        <label className="label" htmlFor="quantity">
-            Quantity:
-        </label>
-        <input
+         <input
             className="input"
-            type="number"
-            name="quantity"
-            value={state.quantity}
+            type="checkbox"
+            name="music"
+            value={state.options.[]}
             onChange={handleChange}
         />
+         <input
+            className="input"
+            type="checkbox"
+            name="confettis"
+            value={state.options.[]}
+            onChange={handleChange}
+        />
+         <input
+            className="input"
+            type="checkbox"
+            name="fireworks"
+            value={state.options}
+            onChange={handleChange}
+        />
+
         <label className="label" htmlFor="start">
             Start date:
         </label>
@@ -47,10 +59,10 @@ function BookingForm ({ onSubmit }) {
             className="input"
             type="date"
             name="date"
-            value={(state.date).format("yyyy-mm-dd")}
+            value={state.date}
             onChange={handleChange}
         />
-        <button className="button" type="submit">Add option  </button>
+        <button className="button" type="submit"> Add option  </button>
     </form>
 
 );

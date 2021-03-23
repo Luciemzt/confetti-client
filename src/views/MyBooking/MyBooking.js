@@ -1,25 +1,38 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useBooking } from "../../context/BookingContext";
+import UserBookings from '../../components/UserBookings/UserBookings';
 import BookingForm from '../../components/BookingForm/BookingForm';
+
 import {
-    getBookings as getBookingsService,
     editBooking as editBookingService,
-    createBooking as createBookingService,
     deleteBooking as deleteBookingService,
 } from "../service/booking.service";
 
 function MyBookings () { 
     const {push} = useHistory();
-    const {getBookings, editBooking, deleteBooking } = useBooking();
-    const handleDeleteBooking = async (booking) => {
-      await createBookingService(booking);
-      push('/booking');
-    };
+    const {editBooking, deleteBooking, getBookings } = useBooking();
+
+      const handleEditBooking = async (booking) => {
+        await editBooking(booking);
+        push('/mybooking');
+      };
+
+      const handleDeleteBooking = async (booking) => {
+        await deleteBooking(booking);
+        push('/booking');
+      };
     return (
-      <div>
-      <h1> Here are all your booking !  </h1>
-      </div>
-    )
-  };
-  export default BookingPage;
+            <div>
+              <h1> Here are your booking ! </h1>
+              {Bookings.map((booking) => (
+                <div key={booking._id}>
+                  <p>{booking.options}</p>
+                  <p>{booking.date}</p>
+                  <p>{booking.quantity}</p>            
+            </div>
+              ))
+              </div>
+              )};
+
+  export default MyBookings;

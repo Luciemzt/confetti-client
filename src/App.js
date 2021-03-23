@@ -11,6 +11,7 @@ import Login from "./views/Login/Login";
 import Place from "./views/Place/Place";
 import Places from "./views/Places/Places";
 import BookingPage from "./views/BookingPage/BookingPage";
+import MyBookings from "./views/MyBookings/MyBookings";
 //import { useAuth } from "./context/AuthContext.utils";
 
 function App(){
@@ -31,9 +32,9 @@ function App(){
         <PrivateRoute exact path="/booking/:placeId" exact>
           <BookingPage />
         </PrivateRoute>
-        {/* <PrivateRoute exact path="/mybookings" exact>
+        <PrivateRoute exact path="/mybookings" exact>
           <MyBookings />
-        </PrivateRoute> */}
+        </PrivateRoute>
         <AnonRoute exact path="/signup" exact>
           <Signup />
         </AnonRoute>

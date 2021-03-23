@@ -4,7 +4,6 @@ import { Switch } from "react-router-dom";
 import PrivateRoute from './components/Routes/PrivateRoute'
 import AnonRoute from './components/Routes/AnonRoute'
 import Navigation from './components/Common/Navigation'
-//import ProfilePage from './components/ProfilePage/ProfilePage'
 import Home from "./views/Home/Home";
 import Signup from "./views/SignUp/SignUp";
 import Login from "./views/Login/Login";

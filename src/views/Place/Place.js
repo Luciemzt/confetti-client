@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link, useEffect, useParams, useHistory } from 'react-router-dom';
+import { Link, useEffect, useParams } from 'react-router-dom';
 import { usePlaces } from "../../context/PlaceContext";
 
 function Place() {
   const {placeId} = useParams()
   const { place, getPlace } = usePlaces();
 
-
-  React.useEffect(() => {
+  React.useEffect (() => {
     getPlace(placeId)
   },[]);
     return (

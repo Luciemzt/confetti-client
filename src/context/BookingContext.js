@@ -3,9 +3,9 @@ import React from "react";
 import {
     getBookings as getBookingsService,
     //getBooking as getBookingService,
-    //editBooking as editBookingService,
+    editBooking as editBookingService,
     createBooking as createBookingService,
-    //deleteBooking as deleteBookingService,
+    deleteBooking as deleteBookingService,
 } from "../service/booking.service";
 
 export const BookingContext = React.createContext({});
@@ -25,8 +25,18 @@ function BookingProvider({ children }) {
     setBookings((state) => state.concat(newBooking));
   };
 
+  const editBooking = async (bookingId, body) => {
+    const { data } = await editBookingService(bookingId, body);
+    setBookings(data);
+  };
+
+  const deleteBooking = async (booking) => {
+    const { data } = await deleteBookingService(booking);
+    setBookings(bookings.filter((booking)=>booking._id !== booking));
+  };
+
   return (
-    <BookingContext.Provider value={{ getBookings, createBooking }}>
+    <BookingContext.Provider value={{ bookings, editBooking, getBookings, createBooking, deleteBooking }}>
       {children}
     </BookingContext.Provider>
   );

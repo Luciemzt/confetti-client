@@ -6,29 +6,22 @@
 
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import { getUser } from "../../service/auth.service";
 import { useBooking } from "../../context/BookingContext";
-import BookingForm from '../../components/BookingForm/BookingForm'
-//import BookingBox from '../../components/BookingBox/BookingBox'
+import BookingForm from '../../components/BookingForm/BookingForm';
+import { createBooking as createBookingService } from '../../service/booking.service';
 
 function BookingPage () { 
-    const {push}=useHistory();
-    const {getBookings, createBooking}   = useBooking();
-    const handleBooking = async (booking) => {
-        await createBooking(booking);
-        push('/booking')
-        };
-
-    // React.useEffect(() => {
-    //     getBookings();
-    //   }, []);
-
-    return (
-        <div>
-        <h1> Welcome to your bookings ! </h1>
-            <BookingForm onSubmit={handleBooking}/>
-        </div>
-    )
+  const {push} = useHistory();
+  const {createBooking} = useBooking();
+  const handleBooking = async (booking) => {
+    await createBookingService(booking);
+    push('/booking');
+  };
+  return (
+    <div>
+    <h1> complete your booking ! </h1>
+        <BookingForm onSubmit={handleBooking}/>
+    </div>
+  )
 };
-
 export default BookingPage;

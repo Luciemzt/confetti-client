@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import AuthProvider from "./context/AuthContext";
 import PlaceProvider from "./context/PlaceContext";
+import BookingProvider from "./context/BookingContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
         <PlaceProvider>
+          <BookingProvider>
           <App />
+          </BookingProvider>
         </PlaceProvider>
       </AuthProvider>
     </Router>

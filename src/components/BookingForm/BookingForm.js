@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 const initialState = {
 	options: [],
 	beverage: false,
@@ -12,11 +12,13 @@ const initialState = {
 function BookingForm ({ onSubmit }) {
 	const [state, setState] = React.useState(initialState);
 	const { placeId } = useParams();
+    const {push} = useHistory();
 	const handleSumbit = (event) => {
 		event.preventDefault();
 		console.log('state to submit :>> ', state);
 		onSubmit({...state, placeId});
 		setState(initialState);
+        push('/booking');
 	}
 	const handleChange = ({ target }) =>{
 		if(target.type === "checkbox" && target.checked) {

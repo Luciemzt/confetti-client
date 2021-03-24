@@ -10,7 +10,7 @@ function Navigation (){
     return (
         <div>
 
-            <Navbar collapseOnSelect fixed='top' expand='sm' bg='light' variant='light'>
+            <Navbar collapseOnSelect fixed='top' expand='sm' bg='warning' variant='light'>
                 <Container>
                     <Navbar.Toggle aria-controls= 'responsive-navbar-nav'/>
                     <Navbar.Collapse id='responsive-navbar-nav'>

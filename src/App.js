@@ -11,7 +11,7 @@ import Login from "./views/Login/Login";
 import Place from "./views/Place/Place";
 import Places from "./views/Places/Places";
 import BookingPage from "./views/BookingPage/BookingPage";
-import MyBookings from "./views/MyBookings/MyBookings";
+import MyBookings from "./views/MyBooking/MyBooking";
 //import { useAuth } from "./context/AuthContext.utils";
 
 function App(){

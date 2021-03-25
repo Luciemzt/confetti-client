@@ -17,7 +17,7 @@ function BookingProvider({ children }) {
   const getBookings = React.useCallback(async () => {
     const { data } = await getBookingsService();
     setBookings(data);
-  }, [setBookings, getBookingsService]);
+  }, []);
 
 
   const createBooking = async (booking) => {

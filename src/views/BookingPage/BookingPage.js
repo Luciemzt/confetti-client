@@ -15,7 +15,7 @@ function BookingPage () {
   const {createBooking} = useBooking();
   const handleBooking = async (booking) => {
     await createBookingService(booking);
-    push('/booking');
+    push('/mybooking');
   };
   return (
     <div>

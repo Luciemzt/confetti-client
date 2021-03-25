@@ -16,7 +16,7 @@ function UserBookings() {
 
       const handleDeleteBooking = async (booking) => {
         await deleteBooking(booking);
-        push('/booking');
+        push('/mybooking');
       };
 
     React.useEffect(() => {

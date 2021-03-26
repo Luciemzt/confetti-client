@@ -1,41 +1,51 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { useBooking } from "../../context/BookingContext";
+import {
+    editBooking as editBookingService,
+    getBookings as getBookingsService,
+} from "../../service/booking.service";
 
 
 
-const initialState = {
-	options: [],
-	beverage: false,
-	music: false,
-	confettis: false,
-	fireworks: false,
-	quantity: 0,
-	date: new Date(),
-};
-
-function EditForm ({ onSubmit }) {
+function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
+    const initialState = {
+        options: [],
+        beverage: bookingInfo.options.includes("beverage"),
+        music: bookingInfo.options.includes("music"),
+        confettis: bookingInfo.options.includes("confettis"),
+        fireworks: bookingInfo.options.includes("fireworks"),
+        quantity: bookingInfo.quantity,
+        date: bookingInfo.date,
+    };
 	const [state, setState] = React.useState(initialState);
-	const { placeId } = useParams();
-    const {push} = useHistory();
-	const handleSumbit = (event) => {
-		event.preventDefault();
-		console.log('state to submit :>> ', state);
-		onSubmit({...state, placeId});
-		setState(initialState);
-        push('/booking');
-	}
+
+
 	const handleChange = ({ target }) =>{
+        console.log("state", state)
+        console.log("target", target)
 		if(target.type === "checkbox" && target.checked) {
+            console.log("target.name", target.name, target.checked)
 			setState({ ...state, options: [...state.options, target.name] });
 		} else if(target.type === "checkbox" && !target.checked && state.options.includes(target.name)) {
+            console.log("target.name", target.name, target.checked)
 			const options = [...state.options].filter(e => e !== target.name);
 			setState({...state, options});
 		} else {
+            console.log("target.name", target.name,target.value)
 			setState({ ...state, [target.name]: target.value });
 		}
 	}
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("state submit ", state)
+        onSubmit(bookingInfo._id, state);
+        toogleEdit(bookingInfo._id);
+      }
+
   return (
-	<form className="form" onSubmit={handleSumbit}>
+	<form className="form" onSubmit={handleSubmit}>
 		<div>
 			<label className="label" htmlFor="name">
 				Options:
@@ -44,6 +54,7 @@ function EditForm ({ onSubmit }) {
 					type="checkbox"
 					name="beverage"
 					value={state.beverage}
+                    //checked= {state.beverage}
 					onChange={handleChange}
 				/>Beverages
 				<input
@@ -51,6 +62,7 @@ function EditForm ({ onSubmit }) {
 					type="checkbox"
 					name="music"
 					value={state.music}
+                    //checked={state.music}
 					onChange={handleChange}
 				/>Music
 				<input
@@ -58,6 +70,7 @@ function EditForm ({ onSubmit }) {
 					type="checkbox"
 					name="confettis"
 					value={state.confettis}
+                    //checked={state.confettis}
 					onChange={handleChange}
 				/>Confettis
 				<input
@@ -65,6 +78,7 @@ function EditForm ({ onSubmit }) {
 					type="checkbox"
 					name="fireworks"
 					value={state.fireworks}
+                    //checked={state.fireworks}
 					onChange={handleChange}
 				/>Fireworks
 			</label>
@@ -89,8 +103,8 @@ function EditForm ({ onSubmit }) {
 			value={state.date}
 			onChange={handleChange}
 		/>
-		<button className="button" type="submit"> Reserve now  </button>
+		<button className="button" type="submit"> Edit your reservation </button>
 	</form>
 );
 }
-export default BookingForm; 
+export default EditForm; 

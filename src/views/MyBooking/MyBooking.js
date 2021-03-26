@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, Link } from "react-router-dom";
+import { useHistory, Link, useParams } from "react-router-dom";
 import { useBooking } from "../../context/BookingContext";
 import EditForm from '../../components/EditForm/EditForm';
 
@@ -12,11 +12,10 @@ import {
 
 function MyBookings () { 
   const [bookings, setBookings] = React.useState([]);
-  const [toogleEdit, setToogleEdit] = React.useState(false);
-  
+  const [toogleEdit, setToogleEdit] = React.useState({ bookingId: "", status: false });
+    const { bookingId } = useParams();
     const {push} = useHistory();
     //const {editBooking, deleteBooking,  getBookings, bookings } = useBooking();
-console.log("bookings", bookings)
     React.useEffect(()=>{
       getBookingsService()
       .then(({data}) =>{
@@ -25,12 +24,22 @@ console.log("bookings", bookings)
       })
     },[]);
    
+  
+    const handleToggleEdit = (bookingId) => {
+      setToogleEdit({ bookingId, status: !toogleEdit.status });
+     };
 
-    const handleEditBooking = async (booking) => {
-        await editBookingService(booking);
-        setBookings([...bookings, editedBooking]);
-        push('/mybookings');
+    const handleEditBooking = async (bookingId, booking) => {
+      console.log("booking", booking)
+      console.log("bookingID", bookingId)
+        await editBookingService(bookingId, booking);
+        await getBookingsService()
+        .then(({data}) =>{
+          console.log("data", data)
+          setBookings(data)
+        })
       };
+
 
       const handleDeleteBooking = async (bookingId) => {
         await deleteBookingService(bookingId);
@@ -40,18 +49,22 @@ console.log("bookings", bookings)
     return (
             <div>
               <h1> Here are your booking ! </h1>
-              {toogleEdit&&
-                  <EditForm/>
-              }
-              {bookings.map((booking) => (
+              { bookings.map((booking) =>{
+              return (
+                booking ?
+                toogleEdit.bookingId === booking._id && toogleEdit.status ? 
+                <EditForm onSubmit={handleEditBooking} bookingInfo={booking} toogleEdit={handleToggleEdit} /> 
+                :
                 <div key={booking._id}>
+                  <p>{booking.place_id.name}</p>
                   <p>{booking.options}</p>
                   <p>{booking.date}</p>
                   <p>{booking.quantity}</p>  
-                  <button onClick={()=>setToogleEdit(!toogleEdit)}> Edit the booking </button>
+                  <button onClick={()=>handleToggleEdit(booking._id)}> Edit the booking </button>
                   <button onClick={()=>handleDeleteBooking(booking._id)}> Delete reservation </button>
-                </div>
-                ))}          
+                </div> 
+                : null
+              )})}          
             </div>
     )};
 

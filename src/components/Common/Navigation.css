@@ -1,0 +1,10 @@
+.menu-right{
+    display: flex; 
+    justify-content:right; 
+    width: initial; 
+    border-bottom: none; 
+    margin: auto 0 auto auto; 
+    background: none; 
+    top: initial; 
+    left: initial, 
+}

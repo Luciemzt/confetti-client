@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+
 const initialState = {
 	options: [],
 	beverage: false,
@@ -18,7 +19,7 @@ function BookingForm ({ onSubmit }) {
 		console.log('state to submit :>> ', state);
 		onSubmit({...state, placeId});
 		setState(initialState);
-        push('/booking');
+        push('/mybookings');
 	}
 	const handleChange = ({ target }) =>{
 		if(target.type === "checkbox" && target.checked) {

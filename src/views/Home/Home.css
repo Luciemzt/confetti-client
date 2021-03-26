@@ -4,18 +4,7 @@
     padding: 100px 40px 40px 40px;
 }
 
-
 .paragraphe{
     font-family: 'Roboto', cursive;
     padding: 10px 40px 40px 40px; 
-}
-body{
-    background-color: #36008D;
-    text-align: center;
-}
-
-button{
-    background-color: #00C9B8;
-    font-family: 'Ranchers', cursive;
-    padding: 10px;
 }

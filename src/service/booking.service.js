@@ -7,7 +7,7 @@ const bookingApi = axios.create({
 
 export const getBookings = () => bookingApi.get(`/booking`);
 
-export const editBooking = (bookingId, body) => bookingApi.patch(`/booking/${bookingId}`, body);
+export const editBooking = (bookingId, body) => bookingApi.put(`/booking/${bookingId}`, body);
 
 export const createBooking = (body) => bookingApi.post("/booking", body);
 

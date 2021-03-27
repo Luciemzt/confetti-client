@@ -12,12 +12,18 @@
     opacity:1;
   }
   
-  .footer-basic .social {
+  .footer-basic  {
     text-align:center;
     padding-bottom:25px;
+    margin-bottom:0;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0; 
+    width:100%;
   }
   
-  .footer-basic .social > a {
+  .footer-basic  > a {
     font-size:24px;
     width:40px;
     height:40px;
@@ -31,15 +37,14 @@
     opacity:0.75;
   }
   
-  .footer-basic .social > a:hover {
+  .footer-basic  > a:hover {
     opacity:0.9;
   }
   
-  .footer-basic .copyright {
+  .footer-basic .copyright .list-inline {
     margin-top:15px;
     text-align:center;
     font-size:13px;
     color:#aaa;
-    margin-bottom:0;
   }
   

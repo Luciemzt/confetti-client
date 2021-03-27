@@ -6,6 +6,7 @@ body{
     min-height: 100vh; 
     margin:0; 
     color: black;
+    background-image:'../public/animation_500_kmqwsemt.gif'
 }
 
 h1,h2,h3,h4,h5,h6{

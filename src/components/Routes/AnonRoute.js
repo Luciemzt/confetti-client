@@ -4,7 +4,6 @@ import { useAuth } from "../../context/AuthContext.utils";
 
 function AnonRoute({ path, exact, children }) {
   const { user } = useAuth();
-  console.log("user",user)
   if (user.isLogged) {
     return <Redirect to="/place" />;
   }

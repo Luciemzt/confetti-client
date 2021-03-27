@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory, Link, useParams } from "react-router-dom";
 import { useBooking } from "../../context/BookingContext";
 import EditForm from '../../components/EditForm/EditForm';
+import Navigation from '../../components/Common/Navigation'
+import Footer from '../../components/Foooter/Footer'
 
 import {
     editBooking as editBookingService,
@@ -19,7 +21,6 @@ function MyBookings () {
     React.useEffect(()=>{
       getBookingsService()
       .then(({data}) =>{
-        console.log("data", data)
         setBookings(data)
       })
     },[]);
@@ -30,12 +31,9 @@ function MyBookings () {
      };
 
     const handleEditBooking = async (bookingId, booking) => {
-      console.log("booking", booking)
-      console.log("bookingID", bookingId)
         await editBookingService(bookingId, booking);
         await getBookingsService()
         .then(({data}) =>{
-          console.log("data", data)
           setBookings(data)
         })
       };
@@ -48,6 +46,7 @@ function MyBookings () {
 
     return (
             <div>
+              <Navigation />
               <h1> Here are your booking ! </h1>
               { bookings.map((booking) =>{
               return (
@@ -57,6 +56,8 @@ function MyBookings () {
                 :
                 <div key={booking._id}>
                   <p>{booking.place_id.name}</p>
+                  <img src={booking.place_id.imageURL} style={{width: 150, height: 150,}} alt="barimage"/>
+
                   <p>{booking.options}</p>
                   <p>{booking.date}</p>
                   <p>{booking.quantity}</p>  
@@ -64,7 +65,8 @@ function MyBookings () {
                   <button onClick={()=>handleDeleteBooking(booking._id)}> Delete reservation </button>
                 </div> 
                 : null
-              )})}          
+              )})}
+              <Footer />          
             </div>
     )};
 

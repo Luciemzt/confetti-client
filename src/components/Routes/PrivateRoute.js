@@ -4,7 +4,6 @@ import { useAuth } from "../../context/AuthContext.utils";
 
 function PrivateRoute({ path, exact, children }) {
   const { user } = useAuth();
-  console.log("privateuser",user)
   const {push}= useHistory()
   
   if (!user.isLogged) {

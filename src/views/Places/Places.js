@@ -4,7 +4,8 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import './Places.css'
 import { Link } from "react-router-dom";
 import { usePlaces } from "../../context/PlaceContext";
-
+import Navigation from '../../components/Common/Navigation'
+import Footer from '../../components/Foooter/Footer'
 
 function Places() {
   const { places, getAllPlaces } = usePlaces();
@@ -15,6 +16,7 @@ function Places() {
 
   return (
     <div >
+      <Navigation/>
       <Container fluid>
       <h1>Places</h1>
       <div className="card">
@@ -36,6 +38,7 @@ function Places() {
       ))}
       </div>
       </Container>
+      <Footer/>
     </div>
   );
 }

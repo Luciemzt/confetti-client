@@ -8,10 +8,10 @@ function Signup () {
     const handleChange = ({target}) => {
         setState({ ...state, [target.name]: target.value });
          };
-    const {handleSignup} = useAuth();
+    const {handleSignup, error} = useAuth();
     const {push}=useHistory();
     const handlesubmit = async (event) => {
-        console.log('helloooo :>> ');
+        ('helloooo :>> ');
         event.preventDefault()
         await handleSignup(state)
         localStorage.setItem('islogged', 'true')
@@ -37,6 +37,7 @@ function Signup () {
                 onChange={handleChange}
             />
             <button type="submit">Sign-Up</button>
+            <p>{error}</p>
         </form>
         <p>
             Aleady have an account? <br />

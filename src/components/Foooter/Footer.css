@@ -14,9 +14,10 @@
   
   .footer-basic  {
     text-align:center;
-    padding-bottom:25px;
     margin-bottom:0;
     position:absolute;
+    padding-bottom: 0px;
+    position: fixed;
     bottom:0;
     left:0;
     right:0; 

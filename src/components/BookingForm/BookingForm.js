@@ -16,7 +16,6 @@ function BookingForm ({ onSubmit }) {
     const {push} = useHistory();
 	const handleSumbit = (event) => {
 		event.preventDefault();
-		console.log('state to submit :>> ', state);
 		onSubmit({...state, placeId});
 		setState(initialState);
         push('/mybookings');

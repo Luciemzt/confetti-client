@@ -2,6 +2,8 @@ import React from 'react';
 import './Login.css'
 import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
+import Navigation from '../../components/Common/Navigation'
+import Footer from '../../components/Foooter/Footer'
 
 
 function Login () {
@@ -9,7 +11,7 @@ function Login () {
     const handleChange = ({target}) => {
         setState({ ...state, [target.name]: target.value });
     };
-    const {handleLogin} = useAuth();
+    const {handleLogin, error} = useAuth();
     const {push}=useHistory();
     const handlesubmit = async (event) => {
         event.preventDefault()
@@ -18,6 +20,7 @@ function Login () {
         push('/place')
     }
     return (
+        <div>
         <div className="loginBox">
             <form onSubmit={handlesubmit}>
                 <label>E-mail</label>
@@ -37,11 +40,14 @@ function Login () {
                     onChange={handleChange}
                 />
             <button type="submit">Login</button>
+            <p>{error}</p>
             <p>
             Not yes an user ? <br />
             <a href="/signup">Signup here</a>
             </p>
             </form>
+        </div>
+        <Footer/>
         </div>
     )
 }

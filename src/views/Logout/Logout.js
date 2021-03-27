@@ -7,7 +7,6 @@ function Logout () {
     const {push}=useHistory();
 
     const handleOnClick = async () => {
-        console.log('adiosss');
         await handleLogout()
         push('/')
         }

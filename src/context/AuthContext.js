@@ -15,6 +15,7 @@ const initialState = {
 
 function AuthProvider({ children }) {
   const [state, setState] = React.useState(initialState);
+  const [error, setError] = React.useState("")
 
   const handleLogin = React.useCallback(async (user) => {
     try {
@@ -22,7 +23,8 @@ function AuthProvider({ children }) {
       saveUser(loggedUser);
       setState({ user: { ...loggedUser, isLogged: true } });
     } catch (e) {
-      console.error(e);
+      console.error("error login", e);
+      setError(e.response.data.message)
     }
   }, []);
 
@@ -33,6 +35,7 @@ function AuthProvider({ children }) {
       setState({ user: { ...loggedUser, isLogged: true } });
     } catch (e) {
       console.error(e);
+      setError(e.response.data.message)
     }
   }, []);
 
@@ -41,15 +44,15 @@ function AuthProvider({ children }) {
       await logout();
       removeUser();
       setState({ user: defaultUser() });
-      console.log("adiosssss")
     } catch (e) {
       console.error(e);
+      return (<p>you are logged out! </p>)
     }
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ user: state.user, handleLogin, handleLogout, handleSignup }}
+      value={{ user: state.user, handleLogin, handleLogout, handleSignup, error }}
     >
       {children}
     </AuthContext.Provider>

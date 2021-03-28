@@ -1,11 +1,10 @@
 import React from 'react';
-import './Login.css'
 import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
-import { Navbar, Nav, Container } from 'react-bootstrap';
-
+import { Container } from 'react-bootstrap';
+import { LoginBox, Button} from './style.js'
 
 function Login () {
     const [state, setState] = React.useState({email: "", password: ""})
@@ -24,8 +23,8 @@ function Login () {
         <div>
             <Container fluid="md">
             <Navigation />
-        <div className="loginBox">
             <form onSubmit={handlesubmit}>
+           <LoginBox>
                 <label>E-mail</label>
                 <input
                     type="text"
@@ -42,14 +41,14 @@ function Login () {
                     value={state.password}
                     onChange={handleChange}
                 />
-            <button type="submit">Login</button>
+            <Button type="submit">Login</Button>
             <p>{error}</p>
             <p>
             Not yes an user ? <br />
             <a href="/signup">Signup here</a>
             </p>
+            </LoginBox>
             </form>
-        </div>
         <Footer/>
         </Container>
         </div>

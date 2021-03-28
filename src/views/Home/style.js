@@ -5,25 +5,39 @@ const Div =styled.div`
 box-sizing: border-box;
 text-align:center; 
 justify-content: center;
-  @media (max-width: 768px) {
-    padding: 70px 30px;
-  }
 `;
 
-export { Div}
+const Button = styled.button`
+    background-color: #FCD200;
+    font-weight: bold; 
+    padding: auto; 
+    border-radius: 6px;
+    box-shadow: 1em; 
+    border: none; 
+    white-space:none; 
+    color: #00C9B8; 
+    font-family: "Lato"; 
+    font-size: 1.5em; 
+    margin-bottom: 15%;
+    min-width: 120px;
+    text-align:center;
+`; 
+const Content = styled.div`
+    position: relative;
+    font-family: 'Ranchers', cursive;
+    color: #C34271; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    width: 60%;
+    h3{
+      font-weight:bold;
+      padding-top:5%;
+    }
+    h1{
+      margin-bottom: 0%;
+    }
+`;
 
-// button{
-//   background-color: #FCD200;
-//   font-weight: bold; 
-//   padding: 8px; 
-//   border-radius: 6px;
-//   margin: 0.5vw;
-//   box-shadow: 1em; 
-//   border: none; 
-//   font-size: 24px;
-//   white-space:none; 
-//   color: #00C9B8; 
-//   font-family: "Lato"; 
-//   font-size: 24px; 
-//   width: 20%;
-// }
+
+export {Div, Button, Content}

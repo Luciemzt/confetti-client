@@ -4,8 +4,8 @@ import {useHistory} from 'react-router-dom'
 import './Signup.css'
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
-import { Navbar, Nav, Container } from 'react-bootstrap';
-
+import { Container } from 'react-bootstrap';
+import { LoginBox, Button} from './Style.js'
 
 function Signup () {
     const [state, setState] = React.useState({email: "", password: ""})
@@ -25,8 +25,8 @@ function Signup () {
         <div>
             <Container fluid="md">
             <Navigation/>
-        <div className="loginBox">
         <form onSubmit={handlesubmit}>
+        <LoginBox>
             <label>Email</label>
             <input
                 type="text"
@@ -43,14 +43,15 @@ function Signup () {
                 value={state.password}
                 onChange={handleChange}
             />
-            <button type="submit">Sign-Up</button>
+            <Button type="submit"> Sign Up </Button>
             <p>{error}</p>
-        </form>
-        <p>
+            <p>
             Aleady have an account? <br />
             <a href="/login">Log in here</a>
-         </p>
-    </div>
+            </p>
+        </LoginBox>
+         </form>
+         
     <Footer/>
     </Container>
     </div>

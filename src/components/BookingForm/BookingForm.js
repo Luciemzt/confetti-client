@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import {Card, Img, Button, Label} from './style.js'
 import { usePlaces } from "../../context/PlaceContext";
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 const initialState = {
 	options: [],
@@ -39,16 +39,16 @@ function BookingForm ({ onSubmit }) {
   return (
 	<Container fluid="md">
 	  <Card>
-	<div>
-	<h2>{place.name}</h2>
-	<Img src={place.imageURL} style={{width: 180, height: 180,}} alt="barimage"/>
-	</div>
-
-	 <form className="form" onSubmit={handleSumbit}>
 		<div>
-			<Label>
-				<h6>Options:</h6><br></br>
-				<input
+			<h2>{place.name}</h2>
+			<Img src={place.imageURL} style={{width: 180, height: 180,}} alt="barimage"/>
+		</div>
+
+	 	<form className="form" onSubmit={handleSumbit}>
+			<div>
+				<Label>
+					<h6>Options:</h6><br></br>
+					<input
 					className="input"
 					type="checkbox"
 					name="beverage"

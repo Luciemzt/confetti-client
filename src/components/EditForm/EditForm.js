@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Img, Button, Label} from './style.js'
+import {Card, Label} from './style.js'
 import { Container } from 'react-bootstrap';
 
 

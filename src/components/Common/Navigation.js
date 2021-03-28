@@ -1,5 +1,4 @@
 import React from 'react'; 
-import {Link} from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import Logout from "../../views/Logout/Logout";
 import { useAuth } from "../../context/AuthContext.utils";
@@ -20,7 +19,7 @@ function Navigation (){
                         </Nav>
                     </Navbar.Collapse>
                     <div className= "logout">
-                    {user.id && <Logout />} 
+                        {user.id && <Logout />} 
                     </div>
             </Navbar>
         </div>

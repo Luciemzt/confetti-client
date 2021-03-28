@@ -2,6 +2,10 @@ import React from 'react';
 import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
 import './Signup.css'
+import Navigation from '../../components/Common/Navigation'
+import Footer from '../../components/Foooter/Footer'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+
 
 function Signup () {
     const [state, setState] = React.useState({email: "", password: ""})
@@ -18,6 +22,9 @@ function Signup () {
         push('/place')
     }
     return (
+        <div>
+            <Container fluid="md">
+            <Navigation/>
         <div className="loginBox">
         <form onSubmit={handlesubmit}>
             <label>Email</label>
@@ -43,6 +50,9 @@ function Signup () {
             Aleady have an account? <br />
             <a href="/login">Log in here</a>
          </p>
+    </div>
+    <Footer/>
+    </Container>
     </div>
             
     )

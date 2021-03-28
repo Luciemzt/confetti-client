@@ -1,25 +1,29 @@
 import styled from "styled-components"; 
 
 
-
-const Button = styled.button`
-background-color: white;
-font-weight: bold; 
-padding: 8px; 
-border-radius: 4px;
-padding: none;
-margin: 0.5vw;
-box-shadow: 1em; 
-border: none; 
-white-space:none; 
-`;
-
 const Div =styled.div`
 box-sizing: border-box;
 text-align:center; 
+justify-content: center;
   @media (max-width: 768px) {
     padding: 70px 30px;
   }
 `;
 
-export {Button, Div}
+export { Div}
+
+// button{
+//   background-color: #FCD200;
+//   font-weight: bold; 
+//   padding: 8px; 
+//   border-radius: 6px;
+//   margin: 0.5vw;
+//   box-shadow: 1em; 
+//   border: none; 
+//   font-size: 24px;
+//   white-space:none; 
+//   color: #00C9B8; 
+//   font-family: "Lato"; 
+//   font-size: 24px; 
+//   width: 20%;
+// }

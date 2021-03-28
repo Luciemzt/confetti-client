@@ -4,29 +4,30 @@ import {Link} from 'react-router-dom';
 import {Button, Div} from './style.js'
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
-import Confetti from '../../components/Confetti/Confetti'
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-//import {Button} from 'react-native';
 
 
 
 function Home () {
     return (
-        <Div>
-            <Navigation />
-            <Confetti/>
-        <div className='titre'>
-        <h1>Let's start throwing confettis to your life !</h1>
-        </div>
-        <div className='paragraphe'>
-            <p> Start booking your next event with us ! </p>
-        </div>
-        <div className='start'>
-        <Link to = "/signup"> <Button type="submit"> Sign up</Button></Link>
-        <Link to = "/login"> <Button type="submit">Log In </Button></Link>
-        </div>
+        <div>
+            <Container fluid>
+             <Navigation />
+            <Div>
+            <video src="video/54504-confetti.mp4" autoPlay loop muted id="myVideo" />
+            <div className='content'>
+                <h1>Let's start throwing confettis to your life !</h1>
+                <h3> Start booking your next event with us ! </h3>
+            </div>
+            <div className= "URL">
+                <Link to = "/signup"> <button type="submit"> Sign up</button></Link>
+                <Link to = "/login"> <button type="submit">Login </button></Link>
+            </div>
+            </Div>
             <Footer />
-        </Div>
+            </Container>
+        </div>
     )
 };
 

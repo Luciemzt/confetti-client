@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 
 function Login () {
@@ -21,6 +22,8 @@ function Login () {
     }
     return (
         <div>
+            <Container fluid="md">
+            <Navigation />
         <div className="loginBox">
             <form onSubmit={handlesubmit}>
                 <label>E-mail</label>
@@ -48,6 +51,7 @@ function Login () {
             </form>
         </div>
         <Footer/>
+        </Container>
         </div>
     )
 }

@@ -4,6 +4,8 @@ import { useBooking } from "../../context/BookingContext";
 import EditForm from '../../components/EditForm/EditForm';
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+
 
 import {
     editBooking as editBookingService,
@@ -46,6 +48,7 @@ function MyBookings () {
 
     return (
             <div>
+              <Container fluid="md">
               <Navigation />
               <h1> Here are your booking ! </h1>
               { bookings.map((booking) =>{
@@ -66,7 +69,8 @@ function MyBookings () {
                 </div> 
                 : null
               )})}
-              <Footer />          
+              <Footer /> 
+              </Container>         
             </div>
     )};
 

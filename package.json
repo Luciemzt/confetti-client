@@ -10,6 +10,7 @@
     "bootstrap": "^4.6.0",
     "connect-mongo": "^4.4.1",
     "prop-types": "^15.7.2",
+    "rc-footer": "^0.6.6",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",

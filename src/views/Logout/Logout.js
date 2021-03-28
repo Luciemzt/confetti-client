@@ -1,6 +1,9 @@
 import React from 'react';
+import './Logout.css'
 import { useAuth } from '../../context/AuthContext.utils';
 import {useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+
 
 function Logout () {
     const {handleLogout} = useAuth();
@@ -12,7 +15,7 @@ function Logout () {
         }
     return (
         <div>
-            <button onClick={handleOnClick}> Logout </button>
+            <Link onClick={handleOnClick}><i class="fas fa-sign-out-alt fa-lg" ></i>  </Link>
         </div>
             )
 }

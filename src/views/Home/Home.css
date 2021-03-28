@@ -1,10 +1,34 @@
-.titre{
-    font-family: 'Ranchers', cursive;
-    color: #C34271; 
-    padding: 100px 40px 40px 40px;
-}
-
 .paragraphe{
     font-family: 'Roboto', cursive;
     padding: 10px 40px 40px 40px; 
+}
+
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  .content {
+    position: relative;
+    font-family: 'Ranchers', cursive;
+    color: #C34271; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    margin-bottom: 40px;
+    width: 60%;
+  }
+
+.URL{
+    position: relative;
+    font-family: 'Ranchers', cursive;
+    color: #C34271; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 80px 20px 20px; 
+    width: 60%;
 }

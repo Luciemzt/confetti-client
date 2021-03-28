@@ -8,20 +8,10 @@
     opacity:0.8;
   }
   
-  .footer-basic ul a:hover {
-    opacity:1;
-  }
-  
   .footer-basic  {
     text-align:center;
-    margin-bottom:0;
-    position:absolute;
-    padding-bottom: 0px;
-    position: fixed;
-    bottom:0;
-    left:0;
-    right:0; 
     width:100%;
+    background-color:#FCD200; 
   }
   
   .footer-basic  > a {
@@ -38,9 +28,7 @@
     opacity:0.75;
   }
   
-  .footer-basic  > a:hover {
-    opacity:0.9;
-  }
+
   
   .footer-basic .copyright .list-inline {
     margin-top:15px;

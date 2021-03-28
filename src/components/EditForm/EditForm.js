@@ -1,10 +1,10 @@
 import React from 'react';
-// import { useParams, useHistory } from 'react-router-dom';
-// import { useBooking } from "../../context/BookingContext";
-// import {
-//     editBooking as editBookingService,
-//     getBookings as getBookingsService,
-// } from "../../service/booking.service";
+import {Card, Img, Button, Label} from './style.js'
+import { Container } from 'react-bootstrap';
+
+
+
+
 function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
     const initialState = {
         options: bookingInfo.options,
@@ -31,10 +31,14 @@ function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
     onSubmit(bookingInfo._id, state);
     toogleEdit(bookingInfo._id);
   }
+
+
   return (
+    <Container fluid="md"> 
+    <Card>
   <form className="form" onSubmit={handleSubmit}>
     <div>
-      <label className="label" htmlFor="name">
+      <Label className="label" htmlFor="name">
         Options:
         <input
           className="input"
@@ -68,11 +72,11 @@ function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
           defaultChecked={state.fireworks}
           onChange={handleChange}
         />Fireworks
-      </label>
+      </Label>
     </div>
-    <label className="label" htmlFor="start">
+    <Label className="label" htmlFor="start">
       Number of persons
-    </label>
+    </Label>
     <input
       className="input"
       type="number"
@@ -80,9 +84,9 @@ function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
       value={state.quantity}
       onChange={handleChange}
     />
-    <label className="label" htmlFor="start">
+    <Label className="label" htmlFor="start">
       Start date:
-    </label>
+    </Label>
     <input
       className="input"
       type="date"
@@ -92,6 +96,8 @@ function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
     />
     <button className="button" type="submit"> Edit your reservation </button>
   </form>
+  </Card>
+	</Container>
 );
 }
 export default EditForm;

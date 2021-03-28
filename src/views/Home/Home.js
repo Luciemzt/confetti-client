@@ -11,8 +11,8 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function Home () {
     return (
+        <Container fluid="md">
         <div>
-            <Container fluid="md">
              <Navigation />
         <Div>
             <video src="video/54504-confetti.mp4" autoPlay loop muted id="myVideo" />
@@ -24,8 +24,8 @@ function Home () {
             </Content>
         </Div>
          <Footer />
-         </Container>
         </div>
+        </Container>
     )
 };
 

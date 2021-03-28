@@ -27,7 +27,7 @@ function BookingPage () {
       <div>
       <Navigation />
       </div>
-    <h1> complete your booking ! </h1>
+    <h1> Complete your booking </h1>
         <BookingForm onSubmit={handleBooking}/>
         <div>
         <Footer/>

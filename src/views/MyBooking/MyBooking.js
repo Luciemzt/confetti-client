@@ -5,7 +5,7 @@ import EditForm from '../../components/EditForm/EditForm';
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
 import { Navbar, Nav, Container } from 'react-bootstrap';
-
+import {Card, Img, Button} from './style.js'
 
 import {
     editBooking as editBookingService,
@@ -51,6 +51,7 @@ function MyBookings () {
               <Container fluid="md">
               <Navigation />
               <h1> Here are your booking ! </h1>
+              <Card>
               { bookings.map((booking) =>{
               return (
                 booking ?
@@ -58,20 +59,20 @@ function MyBookings () {
                 <EditForm onSubmit={handleEditBooking} bookingInfo={booking} toogleEdit={handleToggleEdit} /> 
                 :
                 <div key={booking._id}>
-                  <p>{booking.place_id.name}</p>
-                  <img src={booking.place_id.imageURL} style={{width: 150, height: 150,}} alt="barimage"/>
-
-                  <p>{booking.options}</p>
-                  <p>{booking.date}</p>
-                  <p>{booking.quantity}</p>  
-                  <button onClick={()=>handleToggleEdit(booking._id)}> Edit the booking </button>
-                  <button onClick={()=>handleDeleteBooking(booking._id)}> Delete reservation </button>
+                  <h2>{booking.place_id.name}</h2>
+                  <Img src={booking.place_id.imageURL} style={{width: 150, height: 150,}} alt="barimage"/>
+                  <h6>Options: {booking.options}</h6>
+                  <h6>Date: {booking.date}</h6>
+                  <h6> Number of personns: {booking.quantity}</h6> 
+                  <Button onClick={()=>handleToggleEdit(booking._id)}> Edit </Button>
+                  <Button onClick={()=>handleDeleteBooking(booking._id)}> Delete</Button>
                 </div> 
                 : null
               )})}
+              </Card>
               <Footer /> 
               </Container>         
-            </div>
+              </div>
     )};
 
   export default MyBookings;

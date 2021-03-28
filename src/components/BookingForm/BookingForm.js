@@ -1,5 +1,8 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import {Card, Img, Button, Label} from './style.js'
+import { usePlaces } from "../../context/PlaceContext";
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const initialState = {
 	options: [],
@@ -30,44 +33,54 @@ function BookingForm ({ onSubmit }) {
 			setState({ ...state, [target.name]: target.value });
 		}
 	}
+
+  	const { place, getPlace } = usePlaces();
+
   return (
-	<form className="form" onSubmit={handleSumbit}>
+	<Container fluid="md">
+	  <Card>
+	<div>
+	<h2>{place.name}</h2>
+	<Img src={place.imageURL} style={{width: 180, height: 180,}} alt="barimage"/>
+	</div>
+
+	 <form className="form" onSubmit={handleSumbit}>
 		<div>
-			<label className="label" htmlFor="name">
-				Options:
+			<Label>
+				<h6>Options:</h6><br></br>
 				<input
 					className="input"
 					type="checkbox"
 					name="beverage"
 					value={state.beverage}
 					onChange={handleChange}
-				/>Beverages
+				/> <h7> Beverages   </h7>
 				<input
 					className="input"
 					type="checkbox"
 					name="music"
 					value={state.music}
 					onChange={handleChange}
-				/>Music
+				/> <h7> Music   </h7>
 				<input
 					className="input"
 					type="checkbox"
 					name="confettis"
 					value={state.confettis}
 					onChange={handleChange}
-				/>Confettis
+				/> <h7> Confettis   </h7>
 				<input
 					className="input"
 					type="checkbox"
 					name="fireworks"
 					value={state.fireworks}
 					onChange={handleChange}
-				/>Fireworks
-			</label>
+				/> <h7>Fireworks </h7>
+			</Label>
 		</div>
-		<label className="label" htmlFor="start">
-			Number of persons
-		</label>
+		<Label>
+		<h7>Number of persons: </h7>
+		</Label>
 		<input
 			className="input"
 			type="number"
@@ -75,9 +88,9 @@ function BookingForm ({ onSubmit }) {
 			value={state.quantity}
 			onChange={handleChange}
 		/>
-		<label className="label" htmlFor="start">
-			Start date:
-		</label>
+		<Label>
+		<h7> Date: </h7>
+		</Label>
 		<input
 			className="input"
 			type="date"
@@ -85,8 +98,10 @@ function BookingForm ({ onSubmit }) {
 			value={state.date}
 			onChange={handleChange}
 		/>
-		<button className="button" type="submit"> Reserve now  </button>
+		<Button className="button" type="submit"> Reserve now  </Button>
 	</form>
+	</Card>
+	</Container>
 );
 }
 export default BookingForm; 

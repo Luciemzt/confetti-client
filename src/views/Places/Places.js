@@ -25,7 +25,7 @@ function Places() {
       {places.map((place) => (
         <div className = "cards-container" key={place._id}>
           <div className = "titre">
-          <h5>{place.name}</h5>
+          <h2>{place.name}</h2>
           </div>
           <div className= "type">
           <p>{place.type}</p>

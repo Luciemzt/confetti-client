@@ -1,5 +1,1 @@
-# Redirects from what the browser requests to what we serve
-/               https://confettis.netlify.app/
-/place          https://confettis.netlify.app/place
-/mybookings     https://confettis.netlify.app/mybookings    
-       
+/* /index.html 200

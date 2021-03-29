@@ -1,9 +1,11 @@
 import React from 'react'; 
 import "./Footer.css"
+import { Container } from 'react-bootstrap';
 
 
 function Footer(){
     return(
+    <Container fluid="md">
     <div className="footer-basic">
             <ul className="list-inline">
                 <li className="list-inline-item"><a href="#">Home</a></li>
@@ -14,6 +16,7 @@ function Footer(){
             </ul>
             <p className="copyright">confetti © 2021</p>
     </div>
+    </Container>
     )
 }
 

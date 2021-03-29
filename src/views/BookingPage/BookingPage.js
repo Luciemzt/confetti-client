@@ -11,6 +11,7 @@ import BookingForm from '../../components/BookingForm/BookingForm';
 import { createBooking as createBookingService } from '../../service/booking.service';
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
+import { Container } from 'react-bootstrap';
 
 
 
@@ -23,16 +24,15 @@ function BookingPage () {
     push('/mybookings');
   };
   return (
-    <div>
-      <div>
-      <Navigation />
-      </div>
-    <h1> Complete your booking </h1>
-        <BookingForm onSubmit={handleBooking}/>
-        <div>
+    <Container fluid="md">
+        <Navigation />
+            <div>
+                <h1> Complete your booking </h1>
+                <BookingForm onSubmit={handleBooking}/>
+            </div>
         <Footer/>
-        </div>
-    </div>
+    </Container>
   )
 };
+
 export default BookingPage;

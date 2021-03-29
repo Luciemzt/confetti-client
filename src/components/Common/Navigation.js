@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Navbar, Nav} from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import Logout from "../../views/Logout/Logout";
 import { useAuth } from "../../context/AuthContext.utils";
 
@@ -7,6 +7,7 @@ import { useAuth } from "../../context/AuthContext.utils";
 function Navigation (){
     const { user } = useAuth();
     return (
+    <Container fluid="md">
         <div>
             <Navbar collapseOnSelect postion='top' expand='sm' bg='warning' variant='light' sticky='top'>
             <Navbar.Brand href="/"> <h9>CONFETTI</h9> <i class="fas fa-glass-cheers"></i> </Navbar.Brand>
@@ -23,6 +24,7 @@ function Navigation (){
                     </div>
             </Navbar>
         </div>
+    </Container>
     );
 }
 

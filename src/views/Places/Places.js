@@ -1,6 +1,6 @@
   
 import React from "react";
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import './Places.css'
 import { Link } from "react-router-dom";
 import { usePlaces } from "../../context/PlaceContext";

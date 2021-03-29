@@ -12,9 +12,8 @@ import { Container } from 'react-bootstrap';
 function Home () {
     return (
         <Container fluid="md">
-        <div>
              <Navigation />
-        <Div>
+            <Div>
             <video src="video/54504-confetti.mp4" autoPlay loop muted id="myVideo" />
             <Content>
                 <h1>Let's start throwing confettis to your life !</h1>
@@ -24,9 +23,7 @@ function Home () {
             </Content>
         </Div>
          <Footer />
-        </div>
         </Container>
     )
 };
-
 export default Home

@@ -4,12 +4,12 @@ import Logout from "../../views/Logout/Logout";
 import { useAuth } from "../../context/AuthContext.utils";
 
 
+
 function Navigation (){
     const { user } = useAuth();
     return (
-    <Container fluid="md">
         <div>
-            <Navbar collapseOnSelect postion='top' expand='sm' bg='warning' variant='light' sticky='top'>
+            <Navbar collapseOnSelect expand='md' bg='warning' variant='light' sticky='top'>
             <Navbar.Brand href="/"> <h9>CONFETTI</h9> <i class="fas fa-glass-cheers"></i> </Navbar.Brand>
                     <Navbar.Toggle aria-controls= 'responsive-navbar-nav'/>
                     <Navbar.Collapse id='responsive-navbar-nav'>
@@ -24,7 +24,6 @@ function Navigation (){
                     </div>
             </Navbar>
         </div>
-    </Container>
     );
 }
 

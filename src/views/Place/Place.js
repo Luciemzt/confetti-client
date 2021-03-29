@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { usePlaces } from "../../context/PlaceContext";
 import Navigation from '../../components/Common/Navigation'
 import Footer from '../../components/Foooter/Footer'
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 import {Card, Img, Button} from './style.js'
 
 function Place() {

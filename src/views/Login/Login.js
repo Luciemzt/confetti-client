@@ -21,8 +21,8 @@ function Login () {
     }
     return (
         <div>
-            <Container fluid="md">
             <Navigation />
+            <Container fluid="md">
             <form onSubmit={handlesubmit}>
            <LoginBox>
                 <label>E-mail</label>
@@ -49,8 +49,8 @@ function Login () {
             </p>
             </LoginBox>
             </form>
-        <Footer/>
         </Container>
+        <Footer/>
         </div>
     )
 }

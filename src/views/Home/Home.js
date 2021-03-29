@@ -16,12 +16,12 @@ function Home () {
             <Div>
             <video src="video/54504-confetti.mp4" autoPlay loop muted id="myVideo" />
             <Content>
-                <h1>Let's start throwing confettis to your life !</h1>
+                <h1>Let's throw confettis to your life !</h1>
                 <h3> Start booking your next event with us ! </h3>
                 <Link to = "/signup"> <Button type="submit"> Sign up </Button></Link>
                 <Link to = "/login"> <Button type="submit">Login </Button></Link>
             </Content>
-        </Div>
+            </Div>
          <Footer />
         </Container>
     )

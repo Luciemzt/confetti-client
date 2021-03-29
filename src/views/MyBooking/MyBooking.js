@@ -16,6 +16,9 @@ function MyBookings () {
   const [bookings, setBookings] = React.useState([]);
   const [toogleEdit, setToogleEdit] = React.useState({ bookingId: "", status: false });
 
+  const { bookingId } = useParams();
+  const {push} = useHistory();
+  //const {editBooking, deleteBooking,  getBookings, bookings } = useBooking();
   
     React.useEffect(()=>{
       getBookingsService()

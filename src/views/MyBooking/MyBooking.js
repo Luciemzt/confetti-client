@@ -53,6 +53,8 @@ function MyBookings () {
                 <EditForm onSubmit={handleEditBooking} bookingInfo={booking} toogleEdit={handleToggleEdit} /> 
                 :
                 <div key={booking._id}>
+                  <h2>{booking.place_id.name}</h2>
+                  <Img src={booking.place_id.imageURL} style={{width: 150, height: 150,}} alt="barimage"/>
                   <h6>Options: {booking.options}</h6>
                   <h6>Date: {booking.date}</h6>
                   <h6> Number of personns: {booking.quantity}</h6> 

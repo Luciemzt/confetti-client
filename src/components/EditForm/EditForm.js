@@ -85,7 +85,7 @@ function EditForm ({ onSubmit, bookingInfo, toogleEdit}) {
       onChange={handleChange}
     />
     <Label className="label" htmlFor="start">
-      Start date:
+      Date:
     </Label>
     <input
       className="input"

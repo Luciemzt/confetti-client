@@ -42,7 +42,6 @@ function MyBookings () {
       };
     return (
             <div>
-              <Container fluid="md">
               <Navigation />
               <h1> Here are your booking ! </h1>
               <Card>
@@ -64,8 +63,7 @@ function MyBookings () {
                 : null
               )})}
               </Card>
-              <Footer /> 
-              </Container>         
+              <Footer />         
               </div>
     )};
 

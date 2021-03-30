@@ -37,7 +37,6 @@ function BookingForm ({ onSubmit }) {
   	const { place, getPlace } = usePlaces();
 
   return (
-	<Container fluid="md">
 	  <Card>
 		<div>
 			<h2>{place.name}</h2>
@@ -101,7 +100,6 @@ function BookingForm ({ onSubmit }) {
 		<Button className="button" type="submit"> Reserve now  </Button>
 	</form>
 	</Card>
-	</Container>
 );
 }
 export default BookingForm; 
